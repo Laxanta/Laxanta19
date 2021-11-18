@@ -1,0 +1,83 @@
+DELIMITER #
+Create procedure Tr_Bespalov1 (N int)
+begin
+set autocommit = 0;
+start transaction;
+update student_bespalov2 set Stipendiya = Stipendiya + N;
+commit;
+select  from student_bespalov2;
+end #
+
+-- call Tr_Bespalov1(2);
+
+
+
+DELIMITER #
+Create procedure Tr_Bespalov2 (N int, X varchar(20))
+begin
+set autocommit = 0;
+start transaction;
+update student_bespalov2 set PREMiYA = PREMiYA + N where Gruppa = X;
+commit;
+select  from student_bespalov2;
+end #
+
+-- call Tr_Bespalov2(3, 23ao1);
+
+
+
+DELIMITER #
+Create procedure Tr_Bespalov3 (N varchar(20), X varchar(20))
+begin
+set autocommit = 0;
+start transaction;
+update student_bespalov2 set Gruppa = N where Gruppa = X;
+commit;
+select  from student_bespalov2;
+end #
+
+-- call Tr_Bespalov3(23ao1, 4p1);
+
+
+
+DELIMITER #
+Create procedure Tr_Bespalov4 (N int, X varchar(20), F varchar(20))
+begin
+set autocommit = 0;
+start transaction;
+update student_bespalov2 set PREMiYA = PREMiYA - N where col = X;
+update student_bespalov2 set PREMiYA = PREMiYA + N where col = F;
+commit;
+select  from student_bespalov2;
+end #
+
+-- call Tr_Bespalov4 (9, col1, col2);
+
+
+
+DELIMITER #
+Create procedure Tr_Bespalov5 (N int)
+begin
+set autocommit = 0;
+start transaction;
+update student_bespalov2 set PREMiYA = PREMiYA + 1000 where MMM = N;
+commit;
+select  from student_bespalov2;
+end #
+
+-- call Tr_Bespalov5(1);
+
+
+
+DELIMITER #
+Create procedure Tr_Bespalov6 (N int)
+begin
+set autocommit = 0;
+start transaction;
+update student_bespalov2 set PREMiYA = Stipendiya  0.5 where year(D_R) = N;
+commit;
+select  from student_bespalov2;
+end #
+
+-- call Tr_Bespalov6(1992);
+
