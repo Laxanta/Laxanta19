@@ -1,0 +1,19 @@
+CREATE DEFINER=`student`@`%` TRIGGER `bespalovproskurin`.`student_bespalov2_BEFORE_INSERT_1` BEFORE INSERT ON `student_bespalov2` FOR EACH ROW
+BEGIN
+set new.YYY = year(new.D_R), new.MMM = month(new.D_R), new.DDD = day(new.D_R);
+END
+
+
+
+
+CREATE DEFINER=`student`@`%` TRIGGER `bespalovproskurin`.`student_bespalov2_BEFORE_UPDATE` BEFORE UPDATE ON `student_bespalov2` FOR EACH ROW
+BEGIN
+set new.Stip_new = old.Stipendiya - 10;
+END
+
+
+
+CREATE DEFINER=`student`@`%` TRIGGER `bespalovproskurin`.`student_bespalov2_BEFORE_DELETE` BEFORE DELETE ON `student_bespalov2` FOR EACH ROW
+BEGIN
+insert into arhiv1 values (NULL, OLD.N_stud, OLD.FIO, OLD.Stipendiya + OLD.PREMiYA);
+END
