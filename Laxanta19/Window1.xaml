@@ -1,0 +1,49 @@
+﻿<Window x:Class="Laxanta19.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laxanta19"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF6777CB" Offset="0.749"/>
+                <GradientStop Color="#FE273159"/>
+                <GradientStop Color="#FE54A672" Offset="0.481"/>
+                <GradientStop Color="#FE327488" Offset="0.236"/>
+                <GradientStop Color="#FEC967DD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom">Поиск</Label>
+        <TextBox Grid.Column="0" Grid.Row="1" Width="150px" Height="30px" Name="SearchBox" HorizontalAlignment="Left"></TextBox>
+        <Button Grid.Column="0" Grid.Row="1" Width="115px" Height="30px" HorizontalAlignment="Right">Искать</Button>
+        <Label Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left">Фильтр</Label>
+        <ComboBox Grid.Column="2" Grid.Row="1" Height="30px" Width="200px" HorizontalAlignment="Left">
+            <TextBlock>All</TextBlock>
+            <TextBlock>Not all</TextBlock>
+            <TextBlock>Not at all</TextBlock>
+        </ComboBox>
+        <DataGrid Grid.Column="0" Grid.Row="2" x:Name="GdGrid" Grid.ColumnSpan="3" Margin="0,0,10,20" Grid.RowSpan="8" SelectionChanged="GdGrid_SelectionChanged"></DataGrid>
+    </Grid>
+</Window>
