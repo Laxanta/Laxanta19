@@ -1,0 +1,27 @@
+/*CREATE PROCEDURE EX1 ( ) SELECT Gruppa FROM student_bespalov2;
+call EX1;*/
+/*CREATE PROCEDURE EX2 (N int) update student_bespalov2 set Stipendiya = Stipendiya + 1500 where N_stud = N;
+call EX2 (12);*/
+/*CREATE PROCEDURE EX3 (N int) SELECT FIO, cod_spec, Stipendiya FROM student_bespalov2 where cod_spec = N;
+call EX3 (2612);*/
+/*CREATE PROCEDURE EX4 (N varchar(15)) select Gruppa, sum(Stipendiya) from student_bespalov2 where Gruppa = N;
+call EX4 ("4p3");*/
+/*CREATE PROCEDURE EX5 (N int) SELECT FIO, Gruppa, cod_spec, Stipendiya from student_bespalov2 where YYY = N;
+call EX5 (1999);*/
+/*CREATE PROCEDURE EX6 () SELECT FIO, Gruppa, cod_spec, Stipendiya from student_bespalov2 where Stipendiya is NULL;
+call EX6;*/
+/*CREATE PROCEDURE EX7 (N date, M date) SELECT FIO, D_R from student_bespalov2 where D_R < N and D_R > M;
+call EX7('1999-12-01', '1992-04-19');*/
+
+ /*update student_bespalov2 set Stipendiya = Stipendiya * 2 where Gruppa = N;
+ select FIO, D_R,  Gruppa, cod_spec, Stipendiya from student_bespalov2 where Gruppa = N;*/
+
+
+/*DELIMITER //
+CREATE PROCEDURE EX8 (N varchar(15))
+begin
+update student_bespalov2 set Stipendiya = Stipendiya * 2 where Gruppa = N;
+select FIO, D_R,  Gruppa, cod_spec, Stipendiya from student_bespalov2 where Gruppa = N;
+select FIO, D_R, Gruppa, cod_spec, Stipendiya from student_bespalov2 where Gruppa != N;
+end//
+call EX8 ("slave");*/
